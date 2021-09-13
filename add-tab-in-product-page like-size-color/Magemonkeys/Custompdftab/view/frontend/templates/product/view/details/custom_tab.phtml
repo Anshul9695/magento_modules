@@ -1,0 +1,15 @@
+<?php
+// get current product data
+$product = $block->getProduct();
+
+// get Product name
+
+
+// Get custom product attribute value, change ‘custom_product_attribute’ with your ‘product attribute code’
+echo "<b>Size:</b>";
+echo $product->getData('size');
+echo "<br/>";
+echo "<b>Color:</b>";
+echo $product->getData('color');
+
+?>

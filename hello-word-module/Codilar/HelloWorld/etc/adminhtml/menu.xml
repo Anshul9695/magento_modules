@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Codilar_HelloWorld::settings" title="Settings" module="Codilar_HelloWorld" sortOrder="30" 
+		 action="adminhtml/system_config/edit/section/helloworld/" 
+		 resource="Codilar_HelloWorld::settings"/>   
+    </menu>
+</config>

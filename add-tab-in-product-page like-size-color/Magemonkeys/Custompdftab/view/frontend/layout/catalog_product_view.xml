@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="custom-tab" template="Magemonkeys_Custompdftab::product/view/details/custom_tab.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">newtabclass</argument>
+                    <argument translate="true" name="title" xsi:type="string">Read_More</argument>
+                    <argument name="sort_order" xsi:type="string">60</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
