@@ -1,0 +1,22 @@
+
+.page-footer{
+    background-color: blue;
+}
+footer{
+    background-color: blue;
+}
+.footer-container{
+    min-height: 200px;
+    min-width: 1250px;
+    background-color: lightgray;
+}
+.box-footer{
+    height: 190px;
+    width: 300px;
+    float: left;
+    margin-left: 10px;
+ 
+}
+.heading{
+    color:white;
+}

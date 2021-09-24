@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+	  <add id="Jc_SuperHero::CustomeAdminMenu" title="Enquery" translate="title" 
+      module="Jc_SuperHero" sortOrder="50"  resource="Jc_SuperHero::CustomeAdminMenu"/>
+
+	   <add id="Jc_SuperHero::Menu1" title="Menu1" translate="title" 
+      module="Jc_SuperHero" sortOrder="10" parent="Jc_SuperHero::CustomeAdminMenu" 
+	  resource="Jc_SuperHero::Menu1"/>
+
+	   <add id="Jc_SuperHero::Menu2" title="Grid" translate="title" 
+      module="Jc_SuperHero" sortOrder="15" parent="Jc_SuperHero::Menu1" 
+	  resource="Jc_SuperHero::Menu2" action="enquery/allenquery"/>
+
+	   <add id="Jc_SuperHero::Menu3" title="Table" translate="title" 
+      module="Jc_SuperHero" sortOrder="20" parent="Jc_SuperHero::Menu1" 
+	  resource="Jc_SuperHero::Menu3"/>
+	  
+	</menu>
+</config>

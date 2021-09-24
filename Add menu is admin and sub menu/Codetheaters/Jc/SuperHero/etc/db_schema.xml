@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_enquiry_data" resource="default" engine="innodb"
+           comment="Enquery Form table to store user information">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="user ID"/>
+
+        <column xsi:type="varchar" name="name" nullable="false" length="30"
+                comment="Name"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="50"
+                comment="Email"/>
+         <column xsi:type="varchar" name="phone" nullable="false" length="30"
+                comment="phone"/>
+         <column xsi:type="varchar" name="message" nullable="false" length="200"
+                comment="phone"/>
+
+        <!-- <column xsi:type="varchar" name="production_company" nullable="false" length="30"
+                comment="Production Company"/> -->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

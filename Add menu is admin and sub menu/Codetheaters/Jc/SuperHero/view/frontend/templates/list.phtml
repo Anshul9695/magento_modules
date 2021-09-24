@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block \Jc\SuperHero\Block\Display
+ */
+
+$heroes = $block->getAllSuperHeroes();
+?>
+
+<form method="post" action="<?= $block->getPostUrl() ?>">
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="name"><?= __("Name") ?></label>
+                <input type="text" name="name"/>
+        </div>
+        <div>
+            <label for="email"><?= __("Email") ?></label>
+                <input type="text" name="email"/>
+        </div>
+        <div>
+            <label for="phone"><?= __("Phone") ?></label>
+                <input type="text" name="phone"/>
+        </div>
+        <div>
+            <label for="message"><?= __("Message") ?></label>
+                <input type="text" name="message"/>
+        </div>
+       
+        <input type="submit" value="<?= __("Submit") ?>" />
+    </fieldset>
+</form>

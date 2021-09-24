@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="AllenqueryGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Jc\SuperHero\Model\ResourceModel\Hero\Collection</argument>
+        </arguments>
+    </virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="enquery_allenquery_listing_data_source" xsi:type="string">Jc\SuperHero\Model\ResourceModel\Hero\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Jc\SuperHero\Model\ResourceModel\Hero\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_enquiry_data</argument>
+            <argument name="eventPrefix" xsi:type="string">customer_enquiry_data_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">customer_enquiry_data_collection</argument>
+            <argument name="resourceModel" xsi:type="string">SuperHero\SuperHero\Model\ResourceModel\Hero</argument>
+        </arguments>
+    </type>
+</config>

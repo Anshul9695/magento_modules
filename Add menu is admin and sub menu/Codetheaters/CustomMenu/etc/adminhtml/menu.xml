@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+	  <add id="Codetheaters_CustomMenu::CustomeAdminMenu" title="Enquery" translate="title" 
+      module="Codetheaters_CustomMenu" sortOrder="50"  resource="Codetheaters_CustomMenu::CustomeAdminMenu"/>
+
+	   <add id="Codetheaters_CustomMenu::Menu1" title="Menu1" translate="title" 
+      module="Codetheaters_CustomMenu" sortOrder="10" parent="Codetheaters_CustomMenu::CustomeAdminMenu" 
+	  resource="Codetheaters_CustomMenu::Menu1"/>
+
+	   <add id="Codetheaters_CustomMenu::Menu2" title="Grid" translate="title" 
+      module="Codetheaters_CustomMenu" sortOrder="15" parent="Codetheaters_CustomMenu::Menu1" 
+	  resource="Codetheaters_CustomMenu::Menu2"/>
+
+	   <add id="Codetheaters_CustomMenu::Menu3" title="Table" translate="title" 
+      module="Codetheaters_CustomMenu" sortOrder="20" parent="Codetheaters_CustomMenu::Menu1" 
+	  resource="Codetheaters_CustomMenu::Menu3"/>
+	  
+	</menu>
+</config>
