@@ -1,0 +1,83 @@
+<?php
+        $productId = $block->getProduct()->getId();
+        $cat_ids = $block->getProduct()->getCategoryIds();
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $product = $objectManager->create('Magento\Catalog\Model\Product');
+        $productt = $objectManager->create('Magento\Catalog\Model\Product');
+        $category = $objectManager->create('Magento\Catalog\Model\Category')->load($cat_ids[0]);
+      
+        $category_product = $category->getProductCollection()->addAttributeToSort('position', 'asc');
+       $category_product->addAttributeToFilter('status',1);
+        $category_product->addAttributeToFilter('visibility',4);
+        $cat_prod_ids = $category_product->getAllIds();
+       
+?>
+<div class="previous_next">
+<form name="form_value" method="POST" id="form_value">
+        <span><button  name="like" id="like" value="1">Like</button></span> 
+        <span><button name="dislike" id="dislike" value="0" style="margin-left:400px;">Dislike </button></span>
+</form>
+</div>
+
+<script>
+   var url = "<?php  echo $block->getUrl('previousnext/index/index/'); ?>";
+     require(['jquery'],function(){
+        var oneValue = jQuery("button[name='like']").val();
+        var twoValue = jQuery("button[name='dislike']").val();
+        var product_id = jQuery("input[name='product']").val();
+
+    jQuery("#like").click(function(e) {
+    //  var oneValue = jQuery("button[name='like']").val();
+oneValue=1;
+twoValue=0;
+    //  var product_id = jQuery("input[name='product']").val();
+    // alert(product_id);
+jQuery("#like").css("background-color", "lightblue");
+jQuery("#dislike").css("background-color", "white");
+    e.preventDefault();
+    jQuery.ajax({
+        type: "POST",
+        url: url,
+        data: {like:oneValue,dislike:twoValue,product:product_id},
+        //datatype:"json",
+        success:function(response){
+           // alert(response); 
+                        if (response.redirectUrl) {
+                            window.location.href = response.redirectUrl;
+                            // alert("login redirct");  
+                        }
+                    },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+
+jQuery("#dislike").click(function(e) {
+   // var product_id = jQuery("input[name='product']").val();
+   // alert(product_id);
+     //var twoValue = jQuery("button[name='dislike']").val();
+     oneValue=0;
+twoValue=1;
+     jQuery("#dislike").css("background-color", "pink");
+     jQuery("#like").css("background-color", "white");
+    e.preventDefault();
+    jQuery.ajax({
+        type: "POST",
+        url: url,
+        data: {dislike:twoValue,like:oneValue,product:product_id},
+        success:function(response){
+            //alert(response); 
+                        if (response.redirectUrl) {
+                            window.location.href = response.redirectUrl;
+                            // alert("login redirct");  
+                        }
+                    },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+
+});
+</script>

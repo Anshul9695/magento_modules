@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bizspice_PreviousNext::likedislike" title="Like Dislike Counter" module="Bizspice_PreviousNext" sortOrder="51" resource="Bizspice_PreviousNext::likedislike"/>
+
+        <add id="Bizspice_PreviousNext::likecounter" title="Manage Counter Table" module="Bizspice_PreviousNext" sortOrder="10" action="Bizspice_PreviousNext/likecounter" resource="Bizspice_PreviousNext::likecounter" parent="Bizspice_PreviousNext::likedislike"/>
+        
+        <add id="Bizspice_PreviousNext::hello_configuration" title="Configuration" module="Bizspice_PreviousNext" sortOrder="50" parent="Bizspice_PreviousNext::likedislike" action="adminhtml/system_config/edit/section/likedislike" resource="Bizspice_PreviousNext::likedislike_configuration"/>
+    </menu>
+</config>
